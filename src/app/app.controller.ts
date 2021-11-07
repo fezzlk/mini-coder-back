@@ -16,11 +16,11 @@ export class AppController {
     console.log(params.exam_id);
     return '整数 a, b が標準入力で与えられます。a + b を出力してください。';
   }
-  
-  @Post()
-  async postAns(@Body() answer) {
-    console.log(answer);
-    // this.appService.checkAnswer();
-    return 'Received your answer. Please wait...'
-  }
+
+  // @Post('/answer')
+  // async postAns(@Body() answer) {
+  //   console.log(answer);
+  //   // this.answerService.checkAnswer();
+  //   return 'Received your answer. Please wait...'
+  // }
 }
