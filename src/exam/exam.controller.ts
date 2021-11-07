@@ -1,17 +1,17 @@
-import { Controller, Get, Post, Param, Body, Query } from '@nestjs/common';
+import { Controller, Get, Post, Param, Body, Query, Header } from '@nestjs/common';
 
 @Controller('exam')
 export class ExamController {
   @Get(':exam_id')
   getExam(@Param() params): string {
-    console.log(params.exam_id);
-    return 'answer';
+    console.log('joge');
+    return '整数 a, b が標準入力で与えられます。a + b を出力してください。';
   }
 
   @Post()
-  async postAns(@Body() answer) {
-    console.log(answer);
+  @Header('content-type', 'application/json; charset=UTF-8')
+    async postAns(@Body() answer) {
     // this.answerService.checkAnswer();
-    return 'Received your answer. Please wait...'
+    return answer
   }
 }
