@@ -1,14 +1,14 @@
 # mini-coder-back
 mini-coder api server
 
-# API Docs
+## API Docs
 [TBD]
 
-# Required
+## Required
 - Node
 - npm
 
-# Build Server
+## Build Server
 1. Clone this repository
 1. Install dependencies
   - `$ yarn`
