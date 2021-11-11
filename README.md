@@ -1,5 +1,5 @@
 # mini-coder-back
-mini-coder api server
+[mini-coder](https://github.com/fezzlk/mini-coder-back) api server
 
 ## API Docs
 [TBD]
