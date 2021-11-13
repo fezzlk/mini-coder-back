@@ -7,7 +7,8 @@ export class ExamController {
   
   @Get(':exam_id')
   getExam(@Param() params): string {
-    return '整数 a, b が標準入力で与えられます。a + b を出力してください。';
+    // '整数 a, b が標準入力で与えられます。a + b を出力してください。'
+    return '文字列「True」を出力してください';
   }
 
   @Post()
@@ -15,6 +16,7 @@ export class ExamController {
   async postAns(@Body() body) {
     const { answer } = body;
     const result = await this.examService.checkAnswer(answer);
-    return { answer, result };
+    const isCorrect = result === 'True';
+    return { answer, result, isCorrect };
   }
 }
