@@ -4,13 +4,14 @@ import { AppService } from './app.service';
 import { CorsMiddleware } from '../middlewares/cors';
 import { ConfigModule } from '@nestjs/config';
 import { ExamController } from 'src/exam/exam.controller';
+import { ExamService } from '../exam/exam.service';
 
 @Module({
   imports: [ConfigModule.forRoot({
     envFilePath: '.env.development',
   })],
   controllers: [AppController, ExamController],
-  providers: [AppService],
+  providers: [AppService, ExamService],
 })
 
 export class AppModule implements NestModule {
