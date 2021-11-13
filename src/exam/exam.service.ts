@@ -5,7 +5,13 @@ import { PythonShell } from 'python-shell';
 export class ExamService {
   async checkAnswer(answer: string): Promise<string> {
     return new Promise((resolve, reject) => {
-      let pyshell = new PythonShell('src/exam/my_script.py');
+      const fs = require('fs');
+
+      fs.writeFile('tmp/submitted_script.py', `print(${answer})`, function (err) {
+          if (err) { throw err; }
+          console.log('create "submitted_script.py"');
+      });
+      let pyshell = new PythonShell('tmp/submitted_script.py');
 
       // sends a message to the Python script via stdin
       pyshell.send('hello');
