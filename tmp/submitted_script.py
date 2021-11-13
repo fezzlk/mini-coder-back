@@ -1,1 +1,1 @@
-print(print('hoge'))
+print('hoge')

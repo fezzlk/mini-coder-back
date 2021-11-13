@@ -7,7 +7,7 @@ export class ExamService {
     return new Promise((resolve, reject) => {
       const fs = require('fs');
 
-      fs.writeFile('tmp/submitted_script.py', `print(${answer})`, function (err) {
+      fs.writeFile('tmp/submitted_script.py', answer, function (err) {
           if (err) { throw err; }
           console.log('create "submitted_script.py"');
       });
