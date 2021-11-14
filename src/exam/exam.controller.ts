@@ -7,8 +7,18 @@ export class ExamController {
   
   @Get(':exam_id')
   getExam(@Param() params): string {
-    // '整数 a, b が標準入力で与えられます。a + b を出力してください。'
-    return '文字列「True」を出力してください';
+    let questionSet; // {q_id: question}
+    switch (params.exam_id) {
+      case '1':
+        questionSet = [
+          { 'index': 1, 'id': '1', 'q': '文字列「True」を出力してください' },
+          { 'index': 2, 'id': '2', 'q': '整数 a, b が標準入力で与えられます。a + b を出力してください。' },
+          { 'index': 3, 'id': '3', 'q': '整数 a, b が標準入力で与えられます。a + b を出力してください。' },
+          { 'index': 4, 'id': '4', 'q': '整数 a, b が標準入力で与えられます。a + b を出力してください。' },
+          { 'index': 5, 'id': '5', 'q': '整数 a, b が標準入力で与えられます。a + b を出力してください。' },
+        ]
+    }
+    return questionSet;
   }
 
   @Post()
